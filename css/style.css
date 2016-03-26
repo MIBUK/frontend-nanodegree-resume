@@ -194,8 +194,8 @@ span {
   }
 }
 
-#map {
-  display: block;
+ #map {
+  display: block; 
   height: 100%;
   margin: 0 5%;
 }
