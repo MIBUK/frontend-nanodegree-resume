@@ -78,7 +78,8 @@ var education = {
  	"location": "Watford, UK",
  	"certification": "O'Levels",
  	"subject": ["English", " Maths"],
- 	"dates": "1981-1986"
+ 	"dates": "1981-1986",
+ 	"url": "https://www.facebook.com/pages/Leggatts-school/104261299619366?rf=108533885843749"
   }],
     "onlinecourses": [
       {
@@ -195,7 +196,7 @@ projects.display = function() {
     if (projects.projects[project].images.length > 0) {
       for (image in projects.projects[project].images) {
       var formattedProjectsImages = HTMLprojectImage.replace
-      ("%data", projects.projects[project].images[image]);
+      ("%data%", projects.projects[project].images[image]);
       $(".project-entry:last").append(formattedProjectsImages);
       }	
     }
@@ -223,6 +224,9 @@ function displayEducation() {
 	var formattedMajor = HTMLschoolMajor.replace
 	("%data%", education.schools[school].subject);
 	$(".education-entry:last").append(formattedMajor);
+	var formattedURL = HTMLschoolURL.replace
+	("%data%", education.schools[school].url);
+	$(".education-entry:last").append(formattedURL);
     }
  
      for (online in education.onlinecourses) {
