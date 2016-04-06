@@ -8,15 +8,14 @@
 var bio = {
      "name": "Mike Smith ",
      "role": "Workflow Solutions Manager",
-     "contacts": [
+     "contacts": 
       {
        "mobile": "0703 40 80 50",
        "email": "mike@inthezone.com",
        "github": "MIBUK",
        "twitter": "@inthezone",
        "location": "Stockholm, Sweden"
-      }
-     ],
+      },
      "welcomeMessage": "Welcome to my online resume. It will summarise my skills, history and contact info.",
      "skills": [
      "HTML", "CSS", "JavaScript", "Workflow Tools", "Variable Data", "Networks", "Crossmedia Tools"
@@ -125,56 +124,53 @@ bio.display = function() {
     var welcomebio = HTMLwelcomeMsg.replace
     ("%data%", bio.welcomeMessage);
     $("#header").append(welcomebio);
+    var mobilebio = HTMLmobile.replace
+    ("%data%", bio.contacts.mobile);
+    $("#topContacts").append(mobilebio);
+    $("#footerContacts").append(mobilebio);
+    var emailbio = HTMLemail.replace
+    ("%data%", bio.contacts.email);
+    $("#topContacts").append(emailbio);
+    $("#footerContacts").append(emailbio);
+    var githubbio = HTMLgithub.replace
+    ("%data%", bio.contacts.github);
+    $("#topContacts").append(githubbio);
+    $("#footerContacts").append(githubbio);
+    var twitterbio = HTMLtwitter.replace
+    ("%data%", bio.contacts.twitter);
+    $("#topContacts").append(twitterbio);
+    $("#footerContacts").append(twitterbio);
+    var locationbio = HTMLlocation.replace
+    ("%data%", bio.contacts.location);
+    $("#topContacts").append(locationbio);
+    $("#footerContacts").append(locationbio);
 
     if (bio.skills.length > 0) {
        $("#header").append(HTMLskillsStart);
 
        var formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[0]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[1]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[2]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[3]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[4]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[5]);
-       $("#header").append(formattedSkill);
+       $("#skills").append(formattedSkill);
        formattedSkill = HTMLskills.replace
        ("%data%", bio.skills[6]);
-       $("#header").append(formattedSkill);
-       }
-
-       for (var indexCount = 0; indexCount < bio.contacts.length; indexCount++) {
-           var mobilebio = HTMLmobile.replace
-           ("%data%", bio.contacts[indexCount].mobile);
-           $("#topContacts").append(mobilebio);
-           $("#footerContacts").append(mobilebio);
-           var emailbio = HTMLemail.replace
-           ("%data%", bio.contacts[indexCount].email);
-           $("#topContacts").append(emailbio);
-           $("#footerContacts").append(emailbio);
-           var githubbio = HTMLgithub.replace
-           ("%data%", bio.contacts[indexCount].github);
-           $("#topContacts").append(githubbio);
-           $("#footerContacts").append(githubbio);
-           var twitterbio = HTMLtwitter.replace
-           ("%data%", bio.contacts[indexCount].twitter);
-           $("#topContacts").append(twitterbio);
-           $("#footerContacts").append(twitterbio);
-           var locationbio = HTMLlocation.replace
-           ("%data%", bio.contacts[indexCount].location);
-           $("#topContacts").append(locationbio);
-           $("#footerContacts").append(locationbio);
-           }
-} 
+       $("#skills").append(formattedSkill);
+       }           
+};
 
 // Calls the displayBio function to display the data in the bio object on the web page
 
@@ -203,7 +199,7 @@ work.display = function() {
     	("%data%", work.jobs[indexCount].description);
     	$(".work-entry:last").append(formattedDescription);
         }
-}
+};
 
 // Calls the displayWork function to display the data in the work object on the web page
 
@@ -235,7 +231,7 @@ projects.display = function() {
            	   }
           	}
      }
- }
+ };
 
 // Calls the projects.display function to display the data in the projects object on the web page
 
@@ -285,7 +281,7 @@ education.display = function () {
             ("%data%", education.onlineCourses[indexCount].url);
             $(".education-entry:last").append(formattedurl);
             }
-}
+};
 
 // Calls the displayEducation function to display the data in the education object on the web page
 
